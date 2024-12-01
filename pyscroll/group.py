@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 import pygame
 
@@ -17,7 +17,7 @@ class PyscrollGroup(pygame.sprite.LayeredUpdates):
 
     """
 
-    def __init__(self, map_layer: BufferedRenderer, *args, **kwargs) -> None:
+    def __init__(self, map_layer: BufferedRenderer, *args: Any, **kwargs: Any) -> None:
         pygame.sprite.LayeredUpdates.__init__(self, *args, **kwargs)
         self._map_layer = map_layer
 
@@ -54,7 +54,7 @@ class PyscrollGroup(pygame.sprite.LayeredUpdates):
         draw_area = surface.get_rect()
         view_rect = self.view
 
-        new_surfaces = list()
+        new_surfaces = []
         spritedict = self.spritedict
         gl = self.get_layer_of_sprite
         new_surfaces_append = new_surfaces.append

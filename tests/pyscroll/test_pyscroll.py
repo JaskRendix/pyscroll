@@ -13,7 +13,7 @@ class DummyDataAdapter(PyscrollDataAdapter):
     visible_tile_layers = [1]
 
     def get_animations(self):
-        return list()
+        return []
 
     def get_tile_image(self, *position):
         return position[0] * position[1]
